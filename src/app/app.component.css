@@ -26,11 +26,10 @@
     font-family: Georgia;
     font-size: 6vw;
     min-width: 50vw;
-    transition: 0.5s;
+    transition: width 0s, box-shadow 0.5s, background-color 0.5s;
 }
 
 .background button:hover, .background button:focus {
     background-color: rgba(100,255,100,0.5);
     box-shadow: 0 10px 20px 0 rgba(0,0,0,0.8);
-    transition: 0.5s;
 }
