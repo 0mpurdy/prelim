@@ -1,0 +1,34 @@
+.welcome-container {    
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: white;
+    font-family: Georgia;
+    font-size: 9vw;
+}
+
+button {
+    background-color: rgba(0,0,0,0);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    color: white;
+    border: solid 10px white;
+    border-radius: 100px;
+    font-family: Georgia;
+    font-size: 5vw;
+    min-width: 35vw;
+    transition: width 0s, box-shadow 0.5s, background-color 0.5s;
+}
+
+button:hover, .background button:focus {
+    background-color: rgba(100,255,100,0.5);
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.8);
+}
