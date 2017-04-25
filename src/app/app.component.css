@@ -1,5 +1,6 @@
 .background {
-    background: linear-gradient(to bottom right, #22a, #66f);
+    /*background: linear-gradient(to bottom right, #22a, #66f);*/
+    background: linear-gradient(to bottom right, #aa6c00, #ffe254);
     height: 100vh;
     width: 100vw;
     position: fixed;

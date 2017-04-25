@@ -1,18 +1,21 @@
 <div class="sign-up-container">
   <md-card>
     <h1>Sign Up</h1>
-    <md-input-container>
-      <input mdInput placeholder="Forename">
-    </md-input-container>
-    <md-input-container>
-      <input mdInput placeholder="Surname">
-    </md-input-container>
-    <br>
-    <md-input-container>
-      <input mdInput placeholder="Email Address">
-    </md-input-container>
-    <div class="footer">
-      <button md-button>Submit</button>
-    </div>
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit(signUpForm)" novalidate>
+      <md-input-container>
+        <input mdInput placeholder="Forename" formControlName="forename">
+      </md-input-container>
+      <md-input-container>
+        <input mdInput placeholder="Surname" formControlName="surname">
+      </md-input-container>
+      <br>
+      <md-input-container>
+        <input mdInput placeholder="Email Address" formControlName="email">
+      </md-input-container>
+      <p *ngIf="errorMessage">{{errorMessage}}</p>
+      <div class="footer">
+        <button md-button type="submit">Submit</button>
+      </div>
+    </form>
   </md-card>
 </div>
