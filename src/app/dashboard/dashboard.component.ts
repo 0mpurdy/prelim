@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { UserService } from '../user/user.service';
 
@@ -11,10 +12,17 @@ export class DashboardComponent implements OnInit {
 
   user: any;
 
-  constructor(private userService: UserService) { }
+  constructor(
+    private userService: UserService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.user = this.userService.getCurrentUser();
+  }
+
+  joinChat() {
+    this.router.navigate(['chat', Math.floor((Math.random() * 10))]);
   }
 
 }

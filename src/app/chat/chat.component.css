@@ -1,0 +1,11 @@
+.message-input-wrapper {
+    display: flex;
+}
+
+.message-input-wrapper md-input-container {
+    flex-grow: 1;
+}
+
+.message-board {
+    margin: 10px;
+}

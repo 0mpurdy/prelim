@@ -1,0 +1,16 @@
+<div class="container top-gap">
+  <md-card>
+    <p>You are now in chat room: {{roomId}}</p>
+
+<div class="mesage-board">
+        <app-chat-message *ngFor="let message of messages" [time]="message.time" [user]="message.user" [message]="message.text"></app-chat-message>
+</div>
+
+    <div class="message-input-wrapper">
+      <md-input-container>
+        <input mdInput placeholder="Your message" [(ngModel)]="message" (keyup.enter)="send()">
+      </md-input-container>
+      <button md-button (click)="send()">Send</button>
+    </div>
+  </md-card>
+</div>
