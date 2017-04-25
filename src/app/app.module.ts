@@ -6,6 +6,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdCardModule, MdInputModule, MdButtonModule, MdIconModule, MdListModule } from '@angular/material';
 
+import { PipesModule } from './pipes/pipes.module';
+
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
@@ -15,8 +17,6 @@ import { LoggedInGuard } from './logged-in/logged-in.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChatComponent } from './chat/chat.component';
 import { ChatMessageComponent } from './chat-message/chat-message.component';
-import { ShortDatePipe } from './short-date.pipe';
-import { ShortNamePipe } from './short-name.pipe';
 
 export const appRoutes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
@@ -33,9 +33,7 @@ export const appRoutes: Routes = [
     SignUpComponent,
     DashboardComponent,
     ChatComponent,
-    ChatMessageComponent,
-    ShortDatePipe,
-    ShortNamePipe
+    ChatMessageComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +46,8 @@ export const appRoutes: Routes = [
     MdInputModule,
     MdButtonModule,
     MdIconModule,
-    MdListModule
+    MdListModule,
+    PipesModule
   ],
   providers: [
     UserService,
