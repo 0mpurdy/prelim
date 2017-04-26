@@ -2,9 +2,11 @@
   <md-card>
     <p>You are now in chat room: {{roomId}}</p>
 
-<div class="mesage-board">
+    <div #scrollMe class="message-window">
+      <div class="message-board">
         <app-chat-message *ngFor="let message of messages" [time]="message.time" [user]="message.user" [message]="message.text"></app-chat-message>
-</div>
+      </div>
+    </div>
 
     <div class="message-input-wrapper">
       <md-input-container>
