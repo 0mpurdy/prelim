@@ -6,8 +6,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class ShortNamePipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    if (!value) { return undefined; }
-    return value.forename + ' ' + value.surname;
+console.log('short nasme of ', value);
+    return value;
+
+    // if (!value) { return undefined; }
+    // return value.forename + ' ' + value.surname;
   }
 
 }

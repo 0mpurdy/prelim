@@ -1,6 +1,11 @@
 <div class="container top-gap">
   <md-card>
     <p>Welcome {{user.forename}}!</p>
-    <div class="block"><button md-button (click)="joinChat()">Join Chat <md-icon>chat_bubble_outline</md-icon></button></div>
+    <div class="block">
+      <md-input-container>
+        <input mdInput placeholder="Favorite food" value="test" [(ngModel)]="roomName">
+      </md-input-container>
+      <button md-button (click)="joinChat()">Join Chat <md-icon>chat_bubble_outline</md-icon></button
+      ></div>
   </md-card>
 </div>

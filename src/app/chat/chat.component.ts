@@ -13,6 +13,7 @@ export class ChatComponent implements OnInit {
   roomId;
   message;
   messages = [];
+  websocket: WebSocket;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +24,23 @@ export class ChatComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.roomId = params['id'];
     });
+    this.messages = [];
+    this.websocket = new WebSocket('wss://ckane-channels-demo.herokuapp.com/chat/' + this.roomId + '/');
+    this.websocket.onmessage = (message) => {
+      // console.log(message);
+      const messageData = JSON.parse(message.data);
+      console.log(messageData);
+      this.messages.push({
+      user: messageData.handle,
+      time: new Date(messageData.timestamp),
+      text: messageData.message
+    });
+    };
+  }
+
+  sendMessage() {
+    console.log(this.websocket);
+    this.websocket.send('anything');
   }
 
   send() {
