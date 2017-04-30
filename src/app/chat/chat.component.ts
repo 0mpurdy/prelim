@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { UserService } from '../user/user.service';
@@ -10,10 +10,12 @@ import { UserService } from '../user/user.service';
 })
 export class ChatComponent implements OnInit {
 
+  @ViewChild('scrollMe') private myScrollContainer: ElementRef;
+
   roomId;
   message;
-  messages = [];
   websocket: WebSocket;
+  messages = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -38,6 +40,16 @@ export class ChatComponent implements OnInit {
     };
   }
 
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
+
+  scrollToBottom(): void {
+    try {
+      this.myScrollContainer.nativeElement.scrollTop = this.myScrollContainer.nativeElement.scrollHeight;
+    } catch (err) { }
+  }
+
   sendMessage() {
     console.log(this.websocket);
     this.websocket.send('anything');
@@ -50,6 +62,8 @@ export class ChatComponent implements OnInit {
       text: this.message
     });
     this.message = '';
+    // document.getElementById('messageBoard').scrollTop = document.getElementById('messageBoard').scrollHeight;
+    // console.log(document.getElementById('messageBoard'));
   }
 
 }
