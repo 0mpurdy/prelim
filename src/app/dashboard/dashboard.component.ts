@@ -11,7 +11,7 @@ import { UserService } from '../user/user.service';
 export class DashboardComponent implements OnInit {
 
   user: any;
-roomName: string;
+  roomName: string;
 
   constructor(
     private userService: UserService,

@@ -35,10 +35,10 @@ export class ChatComponent implements OnInit, AfterViewChecked {
       const messageData = JSON.parse(message.data);
       console.log(messageData);
       this.messages.push({
-      user: messageData.handle,
-      time: new Date(messageData.timestamp),
-      text: messageData.message
-    });
+        user: messageData.handle,
+        time: new Date(messageData.timestamp),
+        text: messageData.message
+      });
     };
   }
 

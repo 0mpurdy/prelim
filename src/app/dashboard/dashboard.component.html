@@ -2,12 +2,12 @@
   <md-card>
     <p>Welcome {{user.forename}}!</p>
     <div class="block">
-      <form (ngSubmit)="joinChat()" >
+      <form (ngSubmit)="joinChat()">
         <md-input-container>
           <input mdInput placeholder="Room Name" [(ngModel)]="roomName" name="roomName">
         </md-input-container>
         <button md-button type="submit">Join Chat <md-icon>chat_bubble_outline</md-icon></button>
       </form>
-      </div>
+    </div>
   </md-card>
 </div>

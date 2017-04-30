@@ -31,12 +31,8 @@ export class SignUpComponent implements OnInit {
 
   onSubmit(form) {
     console.log(form.value);
-    if (this.userService.addUser(form.value)) {
-      this.userService.login(form.value);
-      this.router.navigate(['dashboard']);
-    } else {
-      this.errorMessage = 'User already exists - please sign in!';
-    }
+    this.userService.login(form.value);
+    this.router.navigate(['dashboard']);
   }
 
 }

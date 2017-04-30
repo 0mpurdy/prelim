@@ -27,7 +27,7 @@ export const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardComponent, canActivate: [LoggedInGuard] },
   { path: 'chat/:id', component: ChatComponent, canActivate: [LoggedInGuard] },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' }
-]
+];
 
 @NgModule({
   declarations: [
