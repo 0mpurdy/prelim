@@ -3,10 +3,10 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class UserService {
 
-  constructor() { }
-
   users = {};
-  currentUser: any;
+  currentUser: ChatUser;
+
+  constructor() { }
 
   addUser(user): boolean {
     if (!this.users[user.email]) {
@@ -24,4 +24,10 @@ export class UserService {
     return this.currentUser;
   }
 
+}
+
+export class ChatUser {
+  forename: string;
+  surname: string;
+  email: string;
 }

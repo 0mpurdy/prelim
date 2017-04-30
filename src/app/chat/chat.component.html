@@ -10,9 +10,9 @@
 
     <div class="message-input-wrapper">
       <md-input-container>
-        <input mdInput placeholder="Your message" [(ngModel)]="message" (keyup.enter)="send()">
+        <input mdInput placeholder="Your message" [(ngModel)]="message" (keyup.enter)="sendMessage()">
       </md-input-container>
-      <button md-button (click)="send()">Send</button>
+      <button md-button (click)="sendMessage()">Send</button>
     </div>
   </md-card>
 </div>

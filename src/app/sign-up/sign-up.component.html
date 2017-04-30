@@ -1,6 +1,18 @@
 <div class="sign-up-container">
   <md-card>
-    <h1>Sign Up <i class="material-icons">face</i></h1>
+
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit(signUpForm)" novalidate>
+      <md-input-container>
+        <input mdInput placeholder="Handle" formControlName="forename">
+      </md-input-container>
+      <p *ngIf="errorMessage">{{errorMessage}}</p>
+      <div class="footer">
+        <button md-button type="submit">Submit</button>
+      </div>
+    </form>
+
+    <!--<h1>Sign Up <i class="material-icons">face</i></h1>
+
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit(signUpForm)" novalidate>
       <md-input-container>
         <input mdInput placeholder="Forename" formControlName="forename">
@@ -16,6 +28,6 @@
       <div class="footer">
         <button md-button type="submit">Submit</button>
       </div>
-    </form>
+    </form>-->
   </md-card>
 </div>

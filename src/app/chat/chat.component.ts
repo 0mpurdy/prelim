@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewChecked } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 import { UserService } from '../user/user.service';
 
@@ -8,7 +9,7 @@ import { UserService } from '../user/user.service';
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.css']
 })
-export class ChatComponent implements OnInit {
+export class ChatComponent implements OnInit, AfterViewChecked {
 
   @ViewChild('scrollMe') private myScrollContainer: ElementRef;
 
@@ -19,6 +20,7 @@ export class ChatComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private datePipe: DatePipe,
     private userService: UserService
   ) { }
 
@@ -52,7 +54,14 @@ export class ChatComponent implements OnInit {
 
   sendMessage() {
     console.log(this.websocket);
-    this.websocket.send('anything');
+    const newMessage = JSON.stringify({
+      handle: this.userService.getCurrentUser().forename,
+      // timestamp: this.datePipe.transform(Date.now(), 'MMM dd h:mm a'),
+      message: this.message
+    });
+    console.log(newMessage);
+    this.websocket.send(newMessage);
+    this.message = '';
   }
 
   send() {

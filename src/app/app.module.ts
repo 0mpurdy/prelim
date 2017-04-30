@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MdCardModule, MdInputModule, MdButtonModule, MdIconModule, MdListModule } from '@angular/material';
+import { DatePipe } from '@angular/common';
 
 import { PipesModule } from './pipes/pipes.module';
 
@@ -53,6 +54,8 @@ export const appRoutes: Routes = [
     PipesModule
   ],
   providers: [
+    DatePipe,
+
     UserService,
 
     LoggedInGuard
