@@ -17,10 +17,12 @@ import { LoggedInGuard } from './logged-in/logged-in.guard';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ChatComponent } from './chat/chat.component';
 import { ChatMessageComponent } from './chat-message/chat-message.component';
+import { BidComponent } from './bid/bid.component';
 
 export const appRoutes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
   { path: 'sign-up', component: SignUpComponent },
+  { path: 'bid', component: BidComponent },
   { path: 'dashboard', component: DashboardComponent, canActivate: [LoggedInGuard] },
   { path: 'chat/:id', component: ChatComponent, canActivate: [LoggedInGuard] },
   { path: '', redirectTo: '/welcome', pathMatch: 'full' }
@@ -33,7 +35,8 @@ export const appRoutes: Routes = [
     SignUpComponent,
     DashboardComponent,
     ChatComponent,
-    ChatMessageComponent
+    ChatMessageComponent,
+    BidComponent
   ],
   imports: [
     BrowserModule,

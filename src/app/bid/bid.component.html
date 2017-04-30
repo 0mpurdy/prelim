@@ -1,0 +1,5 @@
+<md-card>
+  <p>test</p>
+  <p *ngFor="let message of messages">{{message.data}}</p>
+  <button md-button (click)="sendMessage()">Send message</button>
+</md-card>
